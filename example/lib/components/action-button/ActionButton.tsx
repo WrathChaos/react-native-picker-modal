@@ -13,20 +13,20 @@ export interface IActionButtonProps {
   actionButtonStyle?: CustomViewStyleProp;
   dividerStyle?: CustomViewStyleProp;
   actionButtonTextStyle?: CustomTextStyleProp;
-  buttonText: string;
+  text?: string;
   TouchableComponent?: any;
   isLastItem?: boolean;
-  onPress: () => void;
+  onActionPress?: () => void;
 }
 
 const ActionButton: React.FC<IActionButtonProps> = ({
-  buttonText,
+  text,
   isLastItem = false,
   dividerStyle,
   actionButtonStyle,
   actionButtonTextStyle,
   TouchableComponent,
-  onPress,
+  onActionPress,
 }) => {
   return (
     <>
@@ -37,10 +37,10 @@ const ActionButton: React.FC<IActionButtonProps> = ({
           actionButtonStyle,
           _dynamicBorderStyle(isLastItem),
         ]}
-        onPress={onPress}
+        onPress={onActionPress}
       >
         <Text style={[styles.actionButtonTextStyle, actionButtonTextStyle]}>
-          {buttonText}
+          {text}
         </Text>
       </TouchableComponent>
       {!isLastItem && <Divider style={dividerStyle} />}

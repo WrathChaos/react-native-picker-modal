@@ -5,64 +5,83 @@ import {
   StyleProp,
   ViewStyle,
   TouchableHighlight,
+  TextStyle,
 } from "react-native";
 import Modal from "react-native-modal";
-import ActionButton from "./components/action-button/ActionButton";
-import Divider from "./components/divider/Divider";
 /**
  * ? Local Imports
  */
 import styles from "./PickerModal.style";
+import Divider from "./components/divider/Divider";
+import ActionButton, {
+  IActionButtonProps,
+} from "./components/action-button/ActionButton";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
 
-interface IPickerModalProps {
+export interface IPickerModalProps extends IActionButtonProps {
   style?: CustomStyleProp;
+  dividerStyle?: CustomStyleProp;
+  cancelButtonStyle?: CustomStyleProp;
+  titleTextContainer?: CustomStyleProp;
+  titleTextStyle?: CustomTextStyleProp;
+  cancelButtonTextStyle?: CustomTextStyleProp;
   data: string[];
-  TouchableComponent?: any;
+  title: string;
   isVisible: boolean;
+  TouchableComponent?: any;
   onPress: (selectedItem: string) => void;
   onCancelPress: () => void;
+  onBackdropPress?: () => void;
 }
 
 const PickerModal: React.FC<IPickerModalProps> = ({
   style,
   data,
+  title,
   onPress,
   isVisible,
+  dividerStyle,
+  titleTextStyle,
+  cancelButtonStyle,
+  titleTextContainer,
+  cancelButtonTextStyle,
   TouchableComponent = TouchableHighlight,
+  onBackdropPress,
   onCancelPress,
   ...rest
 }) => {
   const Title = () => (
-    <View style={styles.titleTextContainer}>
-      <Text style={styles.titleTextStyle}>
-        You can either take a picture or select one from your album.
-      </Text>
+    <View style={[styles.titleTextContainer, titleTextContainer]}>
+      <Text style={[styles.titleTextStyle, titleTextStyle]}>{title}</Text>
     </View>
   );
 
   const CancelButton = () => (
     <TouchableComponent
       underlayColor="rgba(0,0,0,0.7)"
-      style={styles.cancelButtonStyle}
+      style={[styles.cancelButtonStyle, cancelButtonStyle]}
       onPress={onCancelPress}
     >
-      <Text style={styles.cancelButtonTextStyle}>Cancel</Text>
+      <Text style={[styles.cancelButtonTextStyle, cancelButtonTextStyle]}>
+        Cancel
+      </Text>
     </TouchableComponent>
   );
 
   const Picker = () => (
     <View style={[styles.mainContent, style]}>
       <Title />
-      <Divider />
+      <Divider style={dividerStyle} />
       {data.map((item: string, index: number) => (
         <ActionButton
           key={index}
-          buttonText={item}
           TouchableComponent={TouchableComponent}
           isLastItem={index === data.length - 1}
-          onPress={() => onPress && onPress(item)}
+          {...rest}
+          text={item}
+          onActionPress={() => onPress && onPress(item)}
         />
       ))}
     </View>
@@ -74,6 +93,7 @@ const PickerModal: React.FC<IPickerModalProps> = ({
       {...rest}
       animationIn="slideInUp"
       animationOut="slideOutDown"
+      onBackdropPress={onBackdropPress}
     >
       <View style={styles.container}>
         <Picker />

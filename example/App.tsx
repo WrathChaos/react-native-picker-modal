@@ -43,6 +43,7 @@ const App = () => {
       <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
       <OpenPickerButton />
       <ImagePickerModal
+        title="You can either take a picture or select one from your album."
         isVisible={isVisible}
         data={mockData}
         onPress={(selectedItem: string) => {
