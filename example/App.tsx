@@ -6,11 +6,10 @@ import {
   Dimensions,
   SafeAreaView,
   useColorScheme,
-  TouchableOpacity,
 } from "react-native";
 import RNBounceable from "@freakycoder/react-native-bounceable";
+import ImagePickerModal from "@freakycoder/react-native-picker-modal";
 import useStateWithCallback from "@freakycoder/react-use-state-with-callback";
-import ImagePickerModal from "./lib/PickerModal";
 
 const { width: ScreenWidth } = Dimensions.get("screen");
 

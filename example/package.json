@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@freakycoder/react-native-bounceable": "^0.2.5",
+    "@freakycoder/react-native-picker-modal": "^0.1.0",
     "@freakycoder/react-use-state-with-callback": "^0.1.1",
     "react": "17.0.2",
     "react-native": "0.66.4",
