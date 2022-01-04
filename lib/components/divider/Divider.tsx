@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { View, StyleProp, ViewStyle } from "react-native";
 /**
  * ? Local Imports

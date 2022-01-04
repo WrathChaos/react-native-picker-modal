@@ -10,37 +10,39 @@ type CustomViewStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
 
 export interface IActionButtonProps {
+  actionButtonUnderlayColor?: string;
   actionButtonStyle?: CustomViewStyleProp;
   dividerStyle?: CustomViewStyleProp;
   actionButtonTextStyle?: CustomTextStyleProp;
-  buttonText: string;
+  text?: string;
   TouchableComponent?: any;
   isLastItem?: boolean;
-  onPress: () => void;
+  onActionPress?: () => void;
 }
 
 const ActionButton: React.FC<IActionButtonProps> = ({
-  buttonText,
+  text,
   isLastItem = false,
   dividerStyle,
   actionButtonStyle,
   actionButtonTextStyle,
   TouchableComponent,
-  onPress,
+  actionButtonUnderlayColor = "rgba(0,0,0,0.3)",
+  onActionPress,
 }) => {
   return (
     <>
       <TouchableComponent
-        underlayColor="rgba(0,0,0,0.3)"
+        underlayColor={actionButtonUnderlayColor}
         style={[
           styles.actionButtonStyle,
           actionButtonStyle,
           _dynamicBorderStyle(isLastItem),
         ]}
-        onPress={onPress}
+        onPress={onActionPress}
       >
         <Text style={[styles.actionButtonTextStyle, actionButtonTextStyle]}>
-          {buttonText}
+          {text}
         </Text>
       </TouchableComponent>
       {!isLastItem && <Divider style={dividerStyle} />}
