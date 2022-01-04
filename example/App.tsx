@@ -8,7 +8,7 @@ import {
   useColorScheme,
 } from "react-native";
 import RNBounceable from "@freakycoder/react-native-bounceable";
-import ImagePickerModal from "@freakycoder/react-native-picker-modal";
+import PickerModal from "@freakycoder/react-native-picker-modal";
 import useStateWithCallback from "@freakycoder/react-use-state-with-callback";
 
 const { width: ScreenWidth } = Dimensions.get("screen");
@@ -79,7 +79,7 @@ const App = () => {
       <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
       <OpenPickerButton />
       <OpenDayPickerButton />
-      <ImagePickerModal
+      <PickerModal
         title={mockTitle}
         isVisible={isVisible}
         data={mockData}
@@ -93,7 +93,7 @@ const App = () => {
           setVisible(false);
         }}
       />
-      <ImagePickerModal
+      <PickerModal
         title={mockDayTitle}
         isVisible={isDayModalVisible}
         data={dayMockData}

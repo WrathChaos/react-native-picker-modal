@@ -42,7 +42,7 @@ import PickerModal from "@freakycoder/react-native-picker-modal";
 ## Fundamental Usage
 
 ```tsx
-<ImagePickerModal
+<PickerModal
   title="You can either take a picture or select one from your album."
   isVisible={isVisible}
   data={["Take a photo", "Select from album"]}
