@@ -48,7 +48,7 @@ const PickerModal: React.FC<IPickerModalProps> = ({
   cancelButtonStyle,
   titleTextContainer,
   cancelButtonTextStyle,
-  cancelButtonUnderlayColor = "rgba(0,0,0,0.7)",
+  cancelButtonUnderlayColor = "rgba(200,200,200,0.1)",
   TouchableComponent = TouchableHighlight,
   onBackdropPress,
   onCancelPress,

@@ -10,6 +10,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@freakycoder/react-native-bounceable": "^0.2.5",
+    "@freakycoder/react-use-state-with-callback": "^0.1.1",
     "react": "17.0.2",
     "react-native": "0.66.4",
     "react-native-modal": ">= 13.0.0"

@@ -8,18 +8,36 @@ import {
   useColorScheme,
   TouchableOpacity,
 } from "react-native";
+import RNBounceable from "@freakycoder/react-native-bounceable";
+import useStateWithCallback from "@freakycoder/react-use-state-with-callback";
 import ImagePickerModal from "./lib/PickerModal";
 
 const { width: ScreenWidth } = Dimensions.get("screen");
 
 const mockData = ["Take a photo", "Select from album"];
+const mockTitle =
+  "You can either take a picture or select one from your album.";
+
+const dayMockData = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+const mockDayTitle = "Select a day from the picker";
 
 const App = () => {
   const isDarkMode = useColorScheme() === "dark";
-  const [isVisible, setVisible] = React.useState<boolean>(false);
+  const [isVisible, setVisible] = useStateWithCallback<boolean>(false);
+  const [isDayModalVisible, setDayModalVisible] = useStateWithCallback<boolean>(
+    false,
+  );
 
   const OpenPickerButton = () => (
-    <TouchableOpacity
+    <RNBounceable
       style={{
         height: 50,
         width: ScreenWidth * 0.9,
@@ -32,8 +50,27 @@ const App = () => {
         setVisible(true);
       }}
     >
-      <Text style={{ color: "#fff" }}>Open Image Picker Modal</Text>
-    </TouchableOpacity>
+      <Text style={{ color: "#fff" }}>Image Picker Modal</Text>
+    </RNBounceable>
+  );
+
+  const OpenDayPickerButton = () => (
+    <RNBounceable
+      style={{
+        height: 50,
+        width: ScreenWidth * 0.9,
+        borderRadius: 16,
+        marginTop: 16,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#26b463",
+      }}
+      onPress={() => {
+        setDayModalVisible(true);
+      }}
+    >
+      <Text style={{ color: "#fff" }}>Day Picker Modal</Text>
+    </RNBounceable>
   );
 
   return (
@@ -42,8 +79,9 @@ const App = () => {
     >
       <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
       <OpenPickerButton />
+      <OpenDayPickerButton />
       <ImagePickerModal
-        title="You can either take a picture or select one from your album."
+        title={mockTitle}
         isVisible={isVisible}
         data={mockData}
         onPress={(selectedItem: string) => {
@@ -54,6 +92,20 @@ const App = () => {
         }}
         onBackdropPress={() => {
           setVisible(false);
+        }}
+      />
+      <ImagePickerModal
+        title={mockDayTitle}
+        isVisible={isDayModalVisible}
+        data={dayMockData}
+        onPress={(selectedItem: string) => {
+          Alert.alert("Alert", selectedItem);
+        }}
+        onCancelPress={() => {
+          setDayModalVisible(false);
+        }}
+        onBackdropPress={() => {
+          setDayModalVisible(false);
         }}
       />
     </SafeAreaView>

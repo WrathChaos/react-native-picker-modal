@@ -12,7 +12,7 @@
 
 <p align="center">
   <img alt="React Native Picker Modal"
-        src="assets/Screenshots/typescript.jpg" />
+        src="assets/Screenshots/react-native-picker-modal.gif" />
 </p>
 
 # Installation
@@ -27,7 +27,7 @@ npm i react-native-picker-modal
 
 <h5><i>IMPORTANT! You need install them</i></h5>
 
-```js
+```ts
 "react-native-modal": ">= 13.0.0"
 ```
 
@@ -35,13 +35,13 @@ npm i react-native-picker-modal
 
 ## Import
 
-```jsx
+```tsx
 import PickerModal from "@freakycoder/react-native-picker-modal";
 ```
 
 ## Fundamental Usage
 
-```jsx
+```tsx
 <ImagePickerModal
   title="You can either take a picture or select one from your album."
   isVisible={isVisible}
@@ -64,14 +64,19 @@ You can checkout the example project 🥰
 
 Simply run
 
-- `npm i`
-- `react-native run-ios/android`
+```
+npm i
+```
 
-should work of the example project.
+```
+react-native run-ios/android
+```
+
+should work of the `example` project.
 
 # Configuration - Props
 
-## Fundamentals
+## <i>Fundamentals [Required]</i>
 
 | Property      |   Type   |  Default  | Description                                                               |
 | ------------- | :------: | :-------: | ------------------------------------------------------------------------- |
@@ -83,29 +88,25 @@ should work of the example project.
 
 ## Customization (Optionals)
 
-| Property                  |         Type          |     Default     | Description                                                                              |
-| ------------------------- | :-------------------: | :-------------: | ---------------------------------------------------------------------------------------- |
-| onBackdropPress           |       function        |    undefined    | set your own logic for the backdrop of the modal functionality when it is pressed        |
-| TouchableComponent        | `TouchableHightlight` |     default     | set your own component instead of default `react-native` `TouchableHightlight` component |
-| style                     |       ViewStyle       |     default     | set or override the style object for the main container                                  |
-| dividerStyle              |       ViewStyle       |     default     | set or override the style object for the divider style                                   |
-| cancelButtonStyle         |       ViewStyle       |     default     | set or override the style object for the cancel button style                             |
-| titleTextContainer        |       ViewStyle       |     default     | set or override the style object for the title text container                            |
-| titleTextStyle            |       TextStyle       |     default     | set or override the style object for the title text style                                |
-| cancelButtonTextStyle     |       ViewStyle       |     default     | set or override the style object for the cancel button text container                    |
-| actionButtonStyle         |       ViewStyle       |     default     | set or override the style object for the action button container                         |
-| actionButtonTextStyle     |       ViewStyle       |     default     | set or override the style object for the action button text                              |
-| actionButtonUnderlayColor |        string         | rgba(0,0,0,0.3) | change the action button's underlay color                                                |
-| cancelButtonUnderlayColor |        string         | rgba(0,0,0,0.7) | change the cancel button's underlay color                                                |
+| Property                  |         Type          |        Default        | Description                                                                              |
+| ------------------------- | :-------------------: | :-------------------: | ---------------------------------------------------------------------------------------- |
+| onBackdropPress           |       function        |       undefined       | set your own logic for the backdrop of the modal functionality when it is pressed        |
+| TouchableComponent        | `TouchableHightlight` |        default        | set your own component instead of default `react-native` `TouchableHightlight` component |
+| style                     |       ViewStyle       |        default        | set or override the style object for the main container                                  |
+| dividerStyle              |       ViewStyle       |        default        | set or override the style object for the divider style                                   |
+| cancelButtonStyle         |       ViewStyle       |        default        | set or override the style object for the cancel button style                             |
+| titleTextContainer        |       ViewStyle       |        default        | set or override the style object for the title text container                            |
+| titleTextStyle            |       TextStyle       |        default        | set or override the style object for the title text style                                |
+| cancelButtonTextStyle     |       ViewStyle       |        default        | set or override the style object for the cancel button text container                    |
+| actionButtonStyle         |       ViewStyle       |        default        | set or override the style object for the action button container                         |
+| actionButtonTextStyle     |       ViewStyle       |        default        | set or override the style object for the action button text                              |
+| actionButtonUnderlayColor |        string         |    rgba(0,0,0,0.3)    | change the action button's underlay color                                                |
+| cancelButtonUnderlayColor |        string         | rgba(200,200,200,0.1) | change the cancel button's underlay color                                                |
 
 ## Future Plans
 
 - [x] ~~LICENSE~~
 - [ ] Write an article about the lib on Medium
-
-# Change Log
-
-Change log will be here !
 
 ## Author
 
@@ -114,3 +115,7 @@ FreakyCoder, kurayogun@gmail.com
 ## License
 
 React Native Picker Modal is available under the MIT license. See the LICENSE file for more info.
+
+```
+
+```

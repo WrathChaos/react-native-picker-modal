@@ -31,6 +31,7 @@ export interface IPickerModalProps extends IActionButtonProps {
   title: string;
   isVisible: boolean;
   TouchableComponent?: any;
+  cancelButtonUnderlayColor?: string;
   onPress: (selectedItem: string) => void;
   onCancelPress: () => void;
   onBackdropPress?: () => void;
@@ -47,6 +48,7 @@ const PickerModal: React.FC<IPickerModalProps> = ({
   cancelButtonStyle,
   titleTextContainer,
   cancelButtonTextStyle,
+  cancelButtonUnderlayColor = "rgba(200,200,200,0.1)",
   TouchableComponent = TouchableHighlight,
   onBackdropPress,
   onCancelPress,
@@ -60,7 +62,7 @@ const PickerModal: React.FC<IPickerModalProps> = ({
 
   const CancelButton = () => (
     <TouchableComponent
-      underlayColor="rgba(0,0,0,0.7)"
+      underlayColor={cancelButtonUnderlayColor}
       style={[styles.cancelButtonStyle, cancelButtonStyle]}
       onPress={onCancelPress}
     >

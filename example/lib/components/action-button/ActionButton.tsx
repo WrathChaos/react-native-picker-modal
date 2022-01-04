@@ -10,6 +10,7 @@ type CustomViewStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
 
 export interface IActionButtonProps {
+  actionButtonUnderlayColor?: string;
   actionButtonStyle?: CustomViewStyleProp;
   dividerStyle?: CustomViewStyleProp;
   actionButtonTextStyle?: CustomTextStyleProp;
@@ -26,12 +27,13 @@ const ActionButton: React.FC<IActionButtonProps> = ({
   actionButtonStyle,
   actionButtonTextStyle,
   TouchableComponent,
+  actionButtonUnderlayColor = "rgba(0,0,0,0.3)",
   onActionPress,
 }) => {
   return (
     <>
       <TouchableComponent
-        underlayColor="rgba(0,0,0,0.3)"
+        underlayColor={actionButtonUnderlayColor}
         style={[
           styles.actionButtonStyle,
           actionButtonStyle,
