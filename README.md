@@ -115,7 +115,3 @@ FreakyCoder, kurayogun@gmail.com
 ## License
 
 React Native Picker Modal is available under the MIT license. See the LICENSE file for more info.
-
-```
-
-```
