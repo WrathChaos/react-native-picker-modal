@@ -2,7 +2,7 @@
 
 [![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-picker-modal)
 
-[![React Native Picker Modal](https://img.shields.io/badge/-Extremely%20easy%20to%20create%20a%20React%20Native%20Component%20Library%20with%20both%20Stateful%20and%20Functional%20Component%20Examples-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-picker-modal)
+[![React Native Picker Modal](https://img.shields.io/badge/-Easy%20and%20fully%20customizable%20picker%20modal%20for%20React%20Native-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-picker-modal)
 
 [![npm version](https://img.shields.io/npm/v/@freakycoder/react-native-picker-modal.svg?style=for-the-badge)](https://www.npmjs.com/package/@freakycoder/react-native-picker-modal)
 [![npm](https://img.shields.io/npm/dt/@freakycoder/react-native-picker-modal.svg?style=for-the-badge)](https://www.npmjs.com/package/@freakycoder/react-native-picker-modal)
