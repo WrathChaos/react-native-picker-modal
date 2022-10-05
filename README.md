@@ -46,8 +46,8 @@ import PickerModal from "@freakycoder/react-native-picker-modal";
   title="You can either take a picture or select one from your album."
   isVisible={isVisible}
   data={["Take a photo", "Select from album"]}
-  onPress={(selectedItem: string) => {
-    Alert.alert("Alert", selectedItem);
+  onPress={(selectedItem: string, index: number) => {
+    console.log({ selectedItem, index });
   }}
   onCancelPress={() => {
     setVisible(false);
