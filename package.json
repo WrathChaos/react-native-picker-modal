@@ -1,7 +1,7 @@
 {
   "name": "@freakycoder/react-native-picker-modal",
   "version": "0.0.0-development",
-  "description": "Easy and fully customizable picker modal for React Native",
+  "description": "Easy and fully customizable picker modal for React Native.",
   "main": "./build/dist/PickerModal.js",
   "repository": "git@github.com:WrathChaos/react-native-picker-modal.git",
   "author": "FreakyCoder <kurayogun@gmail.com>",
