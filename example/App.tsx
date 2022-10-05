@@ -8,7 +8,8 @@ import {
   useColorScheme,
 } from "react-native";
 import RNBounceable from "@freakycoder/react-native-bounceable";
-import PickerModal from "@freakycoder/react-native-picker-modal";
+import PickerModal from "./lib/PickerModal";
+// import PickerModal from "@freakycoder/react-native-picker-modal";
 import useStateWithCallback from "@freakycoder/react-use-state-with-callback";
 
 const { width: ScreenWidth } = Dimensions.get("screen");
@@ -83,8 +84,8 @@ const App = () => {
         title={mockTitle}
         isVisible={isVisible}
         data={mockData}
-        onPress={(selectedItem: string) => {
-          Alert.alert("Alert", selectedItem);
+        onPress={(selectedItem: string, index: number) => {
+          console.log({ selectedItem, index });
         }}
         onCancelPress={() => {
           setVisible(false);
@@ -97,8 +98,8 @@ const App = () => {
         title={mockDayTitle}
         isVisible={isDayModalVisible}
         data={dayMockData}
-        onPress={(selectedItem: string) => {
-          Alert.alert("Alert", selectedItem);
+        onPress={(selectedItem: string, index: number) => {
+          console.log({ selectedItem, index });
         }}
         onCancelPress={() => {
           setDayModalVisible(false);
