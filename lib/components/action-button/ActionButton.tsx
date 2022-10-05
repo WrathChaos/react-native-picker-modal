@@ -14,7 +14,7 @@ export interface IActionButtonProps {
   actionButtonStyle?: CustomViewStyleProp;
   dividerStyle?: CustomViewStyleProp;
   actionButtonTextStyle?: CustomTextStyleProp;
-  text?: string;
+  text?: string | number;
   TouchableComponent?: any;
   isLastItem?: boolean;
   onActionPress?: () => void;

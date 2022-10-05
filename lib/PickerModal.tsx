@@ -29,12 +29,12 @@ export interface IPickerModalProps {
   cancelButtonTextStyle?: CustomTextStyleProp;
   modalProps?: ModalProps;
   actionButtonProps?: IActionButtonProps;
-  data: string[];
+  data: string[] | number[];
   title: string;
   isVisible: boolean;
   TouchableComponent?: any;
   cancelButtonUnderlayColor?: string;
-  onPress: (selectedItem: string, index: number) => void;
+  onPress: (selectedItem: string | number, index: number) => void;
   onCancelPress: () => void;
   onBackdropPress: () => void;
 }
@@ -80,7 +80,7 @@ const PickerModal: React.FC<IPickerModalProps> = ({
     <View style={[styles.mainContent, style]}>
       <Title />
       <Divider style={dividerStyle} />
-      {data.map((item: string, index: number) => (
+      {data.map((item: string | number, index: number) => (
         <ActionButton
           key={index}
           TouchableComponent={TouchableComponent}
